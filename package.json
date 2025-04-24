@@ -1,0 +1,32 @@
+{
+  "name": "ls-cartographer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "build": "tsc",
+    "start": "concurrently \"npm run watch-tsc\" \"npm run watch-sass\" \"node webserver.mjs\" ",
+    "sass": "node ./compile-sass.mjs",
+    "watch-sass": "watch \"npm run sass\" ./scss --interval=1",
+    "watch-tsc": "tsc-watch --onSuccess \"node minify-all.mjs\""
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/fabric": "^5.3.10",
+    "concurrently": "^9.1.2",
+    "glob": "^11.0.2",
+    "jsmin": "^1.0.1",
+    "nodemon": "^3.1.10",
+    "sass": "^1.87.0",
+    "simple-file-watch": "^3.0.0",
+    "tsc-watch": "^6.2.1",
+    "typescript": "^5.8.3",
+    "watch": "^1.0.2"
+  },
+  "dependencies": {
+    "fabric": "^6.6.4",
+    "minify-all-js": "^0.1.9"
+  }
+}
